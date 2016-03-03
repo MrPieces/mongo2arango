@@ -1,16 +1,16 @@
 ## Mongo2Arango
 
 **mongo2arango** is tool to copy data from a MongoDB collection to an ArangoDB collection.
-This is very useful when you to migrate your data from a database to another one, or you just want to populate data in ArangoDB to take advantages of such a database.
+This is very useful when you want to migrate your data from a database to another one or you just want to populate data in ArangoDB to take advantages of such a database.
 
 ![mongo2arango](images/mongo2arango.png)
 
 The application will process the data in the following way :
-* the data are read from MongoDB : in addition to the collection, a query and a projection can be provided to select the data and the fields to write in ArangoDB.
-* then inserted in ArangoDB: the tool uses the batch mode, i.e. new document creations are stacked until a limit size, then all these stacked requests are sent to ArangoDB
-Processing will loop through these steps until there are no more data to read.
+* the data is read from MongoDB : in addition to the collection, a query and a projection can be provided to select the data and the fields to write in ArangoDB.
+* then inserted into ArangoDB: the tool uses the batch mode, i.e. new document creations are stacked until a limited size, then all these stacked requests are sent to ArangoDB.
+Processing will loop through these steps until there is no more data to read.
 
-As it it a Java application, it will run wherever you want. For launching, use the following command : java -jar mongo2arango-jar-with-dependencies.jar -c mongo2arango.properties.
+As it is a Java application, it will run wherever you want. For launching, use the following command : java -jar mongo2arango-jar-with-dependencies.jar -c mongo2arango.properties.
 
 The only argument is a properties file that you need to provide to the application.
 The supported properties are:
